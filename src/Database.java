@@ -1,6 +1,5 @@
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class Database {
     Connection con = null;
@@ -43,8 +42,8 @@ public class Database {
                 "INSERT INTO tbl_account(accnumber, password, balance, acctype) VALUES (123456789, 1234, 100000, 2);";
         try {
             //tbl_basket
-            PreparedStatement pstmt = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            int result = pstmt.executeUpdate();
+            Statement pstmt = con.createStatement();
+            int result = pstmt.executeUpdate(sql);
             if (result > 0) {
                 System.out.println("DataBase got ready.");
             }

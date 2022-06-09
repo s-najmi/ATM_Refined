@@ -66,15 +66,15 @@ public class ATM {
 
                 switch (decision) {
                     case 1:
-                        tr = new Deposit(new java.sql.Date(millis), amount, acc, con);
+                        tr = new Deposit(new Date(millis), amount, acc, con);
                         tr.operate();
                         break;
                     case 2:
-                        tr = new Withdrawal(new java.sql.Date(millis), amount, acc, con);
+                        tr = new Withdrawal(new Date(millis), amount, acc, con);
                         tr.operate();
                         break;
                     case 3:
-                        tr = new Statement(new java.sql.Date(millis), amount, acc, con);
+                        tr = new Statement(new Date(millis), amount, acc, con);
                         tr.operate();
                         break;
                     case 4:
